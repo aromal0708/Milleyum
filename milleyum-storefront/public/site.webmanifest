@@ -1,0 +1,15 @@
+{
+  "name": "Milleyum",
+  "short_name": "Milleyum",
+  "description": "Millet-based health beverages",
+  "icons": [
+    {
+      "src": "/assets/logomark_transp.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#772A49",
+  "background_color": "#FFF6E1",
+  "display": "standalone"
+}
