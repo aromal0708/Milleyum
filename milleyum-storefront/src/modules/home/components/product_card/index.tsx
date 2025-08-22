@@ -1,7 +1,7 @@
 import Image from "next/image"
 import React from "react"
 
-const ProductCard = () => {
+const ProductCard = ({ title, price }: { title?: string; price?: number }) => {
   return (
     <div className="flex flex-col items-center justify-center w-full h-full  rounded-lg">
       <div
@@ -24,8 +24,8 @@ const ProductCard = () => {
         />
       </div>
       <div className="flex flex-col items-center justify-between w-full font-degular text-primary mt-1">
-        <h2 className="text-md font-normal">Mellium Flavour</h2>
-        <p className="mt-0">$19.99</p>
+        <h2 className="text-md font-normal">{title}</h2>
+        <p className="mt-0">${price?.toFixed(2)}</p>
       </div>
     </div>
   )

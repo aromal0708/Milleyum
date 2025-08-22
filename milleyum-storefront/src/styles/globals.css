@@ -19,6 +19,22 @@
     scrollbar-width: none; /* Firefox */
   }
 
+  /* Endless Scrolling Animation - exactly like the HTML example */
+  .animate-scroll {
+    animation: scroll 25s linear infinite;
+    width: max-content;
+    display: flex;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
   input:focus ~ label,
   input:not(:placeholder-shown) ~ label {
     @apply -translate-y-2 text-xsmall-regular;

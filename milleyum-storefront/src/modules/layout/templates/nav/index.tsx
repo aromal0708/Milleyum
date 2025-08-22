@@ -8,7 +8,7 @@ export default async function Nav() {
   const regions = await listRegions().then((regions: StoreRegion[]) => regions)
 
   return (
-    <header className="flex flex-row items-center justify-between bg-background px-14 py-2 sticky top-0 inset-x-0 z-50 group">
+    <header className="flex flex-row items-center justify-between bg-background px-14 sticky top-0 inset-x-0 z-50 group">
       <aside>
         <div className="flex items-center justify-start gap-4">
           <Image

@@ -5,6 +5,7 @@ import { getRegion } from "@lib/data/regions"
 import About from "@modules/home/components/about"
 import Products from "@modules/home/components/products"
 import Features from "@modules/home/components/features"
+import Footer from "@modules/layout/templates/footer"
 
 export const metadata: Metadata = {
   title: "Melliyum",
@@ -35,6 +36,7 @@ export default async function Home(props: {
       <About />
       <Products />
       <Features />
+      <Footer />
     </div>
   )
 }

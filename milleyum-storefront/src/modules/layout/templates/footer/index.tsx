@@ -1,36 +1,16 @@
-import Image from "next/image"
-
+import BrandCard from "@modules/common/components/brand-card"
 export default async function Footer() {
   return (
     <footer className="w-full flex flex-col items-center justify-center py-16  bg-background font-degular">
       <div className="flex flex-row px-56  w-full gap-8">
-        <aside
-          className="flex flex-col justify-between items-center gap-6 bg-center bg-no-repeat py-12 px-16 h-[420px] min-w-[340px] rounded-2xl"
-          style={{
-            backgroundImage: "url('/assets/Poster_1.jpg')",
-            backgroundSize: "100% 100%",
-          }}
-        >
-          <div className="text-center mt-4">
-            <Image
-              src="/assets/wordmark_transp.png"
-              alt="Milleyum Wordmark"
-              width={200}
-              height={100}
-            />
-          </div>
-          <div className="text-center flex-col flex items-center font-gardein font-bold text-3xl text-white">
-            <div>No nasties.</div>
-            <div>No nonsense.</div>
-          </div>
-          <div className="w-12 h-12 mb-4">
-            <Image
-              src="/assets/logomark_transp.png"
-              alt="Milleyum Logo"
-              width={300}
-              height={300}
-            />
-          </div>
+        <aside>
+          <BrandCard
+            width={340}
+            height={420}
+            textSize={32}
+            logoHeight={48}
+            logoWidth={48}
+          />
         </aside>
         <aside
           className="flex flex-col bg-center bg-no-repeat py-6 px-6 h-[420px] w-full rounded-2xl"
