@@ -3,14 +3,15 @@ import React from "react"
 
 const Product = ({ product }: { product: SimplifiedProducts }) => {
   return (
-    <div className="flex flex-col items-center justify-center text-lg font-medium font-degular text-primary">
+    <div className="flex flex-col items-center justify-center text-base sm:text-md md:text-lg font-medium font-degular text-primary w-full">
       <div
-        className="min-w-[440px] min-h-[440px] bg-center bg-cover bg-no-repeat rounded-2xl"
+        className="w-full aspect-square bg-center bg-cover bg-no-repeat rounded-lg sm:rounded-xl md:rounded-2xl"
         style={{
           backgroundImage: `url(${product?.thumbnail})`,
+          backgroundSize: 'cover',
         }}
       ></div>
-      <span className="mt-2">{product?.title}</span>
+      <span className="mt-2 text-center">{product?.title}</span>
       <span className="mt-1">${product?.price?.toFixed(2)}</span>
     </div>
   )

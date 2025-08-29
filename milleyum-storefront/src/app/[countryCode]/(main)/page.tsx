@@ -31,7 +31,7 @@ export default async function Home(props: {
   }
 
   return (
-    <div className="container">
+    <div className="container px-4 sm:px-6 md:px-8 lg:px-14">
       <Hero />
       <About />
       <Products />
