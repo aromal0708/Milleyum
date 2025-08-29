@@ -9,7 +9,7 @@ const Subscribe = () => {
       <div className="flex flex-row items-center justify-between w-full gap-2">
         <input
           type="text"
-          className="w-3/4 border-2 border-primary rounded-lg py-4 px-4 focus:outline-none
+          className="w-3/4 border-2 font-gardein font-semibold text-xl text-primary  border-primary rounded-lg py-4 px-4 focus:outline-none
           placeholder:text-primary placeholder:font-gardein placeholder:text-2xl placeholder:font-medium"
           placeholder="Enter your email"
         />
@@ -18,7 +18,8 @@ const Subscribe = () => {
         </button>
       </div>
       <h2 className="text-sm text-primary flex font-degular font-medium items-start">
-        By subscribing, you will receive emails from Milleyum, you agree to our Privacy Policy. We treat your data with respect.
+        By subscribing, you will receive emails from Milleyum, you agree to our
+        Privacy Policy. We treat your data with respect.
       </h2>
     </div>
   )

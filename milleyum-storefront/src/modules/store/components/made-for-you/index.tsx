@@ -1,7 +1,7 @@
-import Image from "next/image"
 import Product from "../product"
+import { SimplifiedProducts } from "app/[countryCode]/(main)/store/page"
 
-const MadeForYou = () => {
+const MadeForYou = ({products}:{products: SimplifiedProducts[]}) => {
   return (
     <div className="flex flex-col items-start w-full  justify-center text-lg font-medium font-degular text-primary py-8 ">
       <h1 className=" font-medium font-gardein text-6xl ml-1">Made For You</h1>
@@ -17,7 +17,7 @@ const MadeForYou = () => {
           <h1>of Millets</h1>
         </div>
         <div className="flex flex-col gap-4 items-center w-1/3 px-4">
-          <Product product={{ title: "Milleyum Flavour One", price: 19.99 }} />
+          <Product product={products?.[0]} />
           <button className="bg-transparent text-primary border-primary border-2 py-4 rounded-full w-full font-gardein text-3xl font-semibold hover:bg-primary hover:text-white transition-colors">
             Shop Now
           </button>
