@@ -1,9 +1,6 @@
 import { Metadata } from "next"
-
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
-import StoreTemplate from "@modules/store/templates"
 import StoreHero from "@modules/home/components/store-hero"
-import Products from "@modules/home/components/products"
 import BuyProducts from "@modules/store/components/buy-products"
 import MadeForYou from "@modules/store/components/made-for-you"
 import ShopOurProducts from "@modules/store/components/shop-our-products"
@@ -13,7 +10,6 @@ import ShopFooter from "@modules/store/components/shop-footer"
 import { notFound } from "next/navigation"
 import { getRegion } from "@lib/data/regions"
 import { listProducts } from "@lib/data/products"
-import { Product } from "@medusajs/js-sdk/dist/admin/product"
 import { StoreProduct } from "@medusajs/types"
 
 export const metadata: Metadata = {
