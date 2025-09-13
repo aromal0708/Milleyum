@@ -65,7 +65,7 @@ module.exports = {
           "gardein",
           "sans-serif",
         ],
-        degular: ["degular", "serif"], // Add specific Gardein font family
+        degular: ["degular", "serif"],
       },
       keyframes: {
         ring: {
