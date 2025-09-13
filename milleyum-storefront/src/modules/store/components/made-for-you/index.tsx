@@ -1,5 +1,5 @@
+import { SimplifiedProducts } from "types/global"
 import Product from "../product"
-import { SimplifiedProducts } from "app/[countryCode]/(main)/store/page"
 
 const MadeForYou = ({ products }: { products: SimplifiedProducts[] }) => {
   return (

@@ -11,6 +11,7 @@ import { notFound } from "next/navigation"
 import { getRegion } from "@lib/data/regions"
 import { listProducts } from "@lib/data/products"
 import { StoreProduct } from "@medusajs/types"
+import { SimplifiedProducts } from "types/global"
 
 export const metadata: Metadata = {
   title: "Store",
@@ -27,13 +28,7 @@ type Params = {
   }>
 }
 
-export type SimplifiedProducts = {
-  id: string
-  title: string
-  description?: string
-  price: number
-  thumbnail: string | null
-}
+
 
 export default async function StorePage(props: Params) {
   const params = await props.params
@@ -51,11 +46,13 @@ export default async function StorePage(props: Params) {
   })
 
   const products: StoreProduct[] = response?.response.products || []
+  console.log(products)
 
   const simplifiedProducts: SimplifiedProducts[] = products.map((product) => ({
     id: product.id,
     title: product.title,
     description: product.description ?? "",
+    handle: product.handle,
     price: product.variants?.[0]?.calculated_price?.calculated_amount ?? 0,
     thumbnail: product.thumbnail,
   }))

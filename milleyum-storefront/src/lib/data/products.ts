@@ -64,11 +64,16 @@ export const listProducts = async ({
           region_id: region?.id,
           fields:
             "*variants.calculated_price,+variants.inventory_quantity,+metadata,+tags",
-          ...queryParams,
+          ...queryParams
         },
-        headers,
-        next,
-        cache: "force-cache",
+        headers: {
+          ...headers
+        },
+        next: {
+          revalidate: 0,
+          tags: [`products-${Date.now()}`] // Dynamic tag to prevent caching
+        },
+        cache: 'no-store'
       }
     )
     .then(({ products, count }) => {

@@ -17,6 +17,15 @@ export type VariantPrice = {
   percentage_diff: string
 }
 
+export type SimplifiedProducts = {
+  id: string
+  title: string
+  description?: string
+  price: number
+  handle: string
+  thumbnail: string | null
+}
+
 export type StoreFreeShippingPrice = StorePrice & {
   target_reached: boolean
   target_remaining: number

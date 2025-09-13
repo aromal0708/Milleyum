@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import { listProducts } from "@lib/data/products"
 import { getRegion, listRegions } from "@lib/data/regions"
 import ProductTemplate from "@modules/products/templates"
+import { HttpTypes } from "@medusajs/types"
 
 type Props = {
   params: Promise<{ countryCode: string; handle: string }>
@@ -59,11 +60,15 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     notFound()
   }
 
+  const queryParams = {
+    fields: "*variants.calculated_price,+variants.inventory_quantity,+metadata,+tags"
+  } as Record<string, any>
+  
+  queryParams.handle = handle
+
   const product = await listProducts({
     countryCode: params.countryCode,
-    queryParams: { 
-      filters: { handle: [handle] }
-    } as any,
+    queryParams,
   }).then(({ response }) => response.products[0])
 
   if (!product) {
@@ -89,11 +94,15 @@ export default async function ProductPage(props: Props) {
     notFound()
   }
 
+  const queryParams = {
+    fields: "*variants.calculated_price,+variants.inventory_quantity,+metadata,+tags"
+  } as Record<string, any>
+
+  queryParams.handle = params.handle
+
   const pricedProduct = await listProducts({
     countryCode: params.countryCode,
-    queryParams: { 
-      filters: { handle: [params.handle] } 
-    } as any,
+    queryParams,
   }).then(({ response }) => response.products[0])
 
   if (!pricedProduct) {
