@@ -46,7 +46,6 @@ export default async function StorePage(props: Params) {
   })
 
   const products: StoreProduct[] = response?.response.products || []
-  console.log(products)
 
   const simplifiedProducts: SimplifiedProducts[] = products.map((product) => ({
     id: product.id,
@@ -56,8 +55,6 @@ export default async function StorePage(props: Params) {
     price: product.variants?.[0]?.calculated_price?.calculated_amount ?? 0,
     thumbnail: product.thumbnail,
   }))
-
-  console.log(simplifiedProducts)
 
   if (!response || !products || products.length === 0) {
     notFound()

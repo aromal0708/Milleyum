@@ -1,5 +1,6 @@
 import React from "react"
 import Product from "../product"
+import PrimaryButton from "@modules/common/components/primary-button"
 import { SimplifiedProducts } from "app/[countryCode]/(main)/store/page"
 
 const ShopOurProducts = ({ products }: { products: SimplifiedProducts[] }) => {
@@ -10,6 +11,11 @@ const ShopOurProducts = ({ products }: { products: SimplifiedProducts[] }) => {
         {products.slice(0, 3).map((product) => (
           <Product key={product.id} product={product} />
         ))}
+      </div>
+      <div className="w-full flex items-center justify-center my-4 sm:my-6 md:my-8">
+        <PrimaryButton>
+          View All Products
+        </PrimaryButton>
       </div>
     </div>
   )

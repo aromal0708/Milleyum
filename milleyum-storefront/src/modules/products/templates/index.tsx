@@ -24,12 +24,14 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
 }) => {
   if (!product || !product.id) {
     return notFound()
+  }else{
+    console.log({product});
   }
 
   return (
     <>
       <section
-        className="mx-auto flex max-w-[1440px] flex-col items-start justify-start gap-4 lg:flex-row lg:gap-2 lg:px-12 lg:py-6"
+        className="mx-auto flex max-w-[1440px] flex-col items-start justify-start gap-4 lg:flex-row lg:gap-2 lg:px-12 lg:py-6 mt-6"
         data-testid="product-container"
       >
         <div className="mx-auto flex w-full gap-2 lg:sticky lg:top-[calc(var(--header-height)+24px)] lg:mx-0 lg:max-w-[684px]">

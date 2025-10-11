@@ -1,4 +1,5 @@
 import React from "react"
+import PrimaryButton from "@modules/common/components/primary-button"
 
 const Subscribe = () => {
   return (
@@ -13,9 +14,11 @@ const Subscribe = () => {
           placeholder:text-primary placeholder:font-gardein placeholder:text-lg sm:placeholder:text-xl md:placeholder:text-2xl placeholder:font-medium"
           placeholder="Enter your email"
         />
-        <button className="w-full sm:w-1/4 mt-2 sm:mt-0 bg-transparent border-2 border-primary text-primary font-gardein rounded-full py-2 sm:py-2 md:py-3 px-3 sm:px-4 text-lg sm:text-xl md:text-2xl font-medium hover:bg-primary hover:text-white">
-          Subscribe
-        </button>
+        <div className="w-full sm:w-1/4 mt-2 sm:mt-0">
+          <PrimaryButton className="py-2 sm:py-2 md:py-3">
+            Subscribe
+          </PrimaryButton>
+        </div>
       </div>
       <h2 className="text-xs sm:text-sm text-primary flex font-degular font-medium items-start mt-1 sm:mt-0">
         By subscribing, you will receive emails from Milleyum, you agree to our

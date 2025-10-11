@@ -35,9 +35,19 @@ export const getCacheTag = async (tag: string): Promise<string> => {
 
 export const getCacheOptions = async (
   tag: string
-): Promise<{ revalidate: number } | {}> => {
-  // Always return revalidate: 0 to ensure fresh data
-  return { revalidate: 0 }
+): Promise<{ revalidate: number; tags: string[] } | {}> => {
+  try {
+    const cacheTag = await getCacheTag(tag)
+    return { 
+      revalidate: 3600, // 1 hour
+      tags: [cacheTag || tag]
+    }
+  } catch (error) {
+    return { 
+      revalidate: 3600,
+      tags: [tag]
+    }
+  }
 }
 
 export const setAuthToken = async (token: string) => {

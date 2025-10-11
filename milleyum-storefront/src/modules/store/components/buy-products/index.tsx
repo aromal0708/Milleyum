@@ -1,5 +1,6 @@
 import React from "react"
 import Product from "../product"
+import PrimaryButton from "@modules/common/components/primary-button"
 import { SimplifiedProducts } from "types/global"
 
 const BuyProducts = ({ products }: { products: SimplifiedProducts[] }) => {
@@ -14,9 +15,9 @@ const BuyProducts = ({ products }: { products: SimplifiedProducts[] }) => {
         ))}
       </div>
       <div className="w-full flex items-center justify-center my-4 sm:my-6 md:my-8">
-        <button className="flex items-center justify-center bg-transparent text-xl sm:text-2xl md:text-3xl text-primary font-gardein outline-primary border-2 border-primary rounded-full hover:bg-primary hover:text-white transition-colors w-full py-1 sm:py-1.5 md:py-2">
+        <PrimaryButton>
           Where To Buy
-        </button>
+        </PrimaryButton>
       </div>
     </div>
   )

@@ -1,4 +1,5 @@
 import BrandCard from "@modules/common/components/brand-card"
+import PrimaryButton from "@modules/common/components/primary-button"
 import Image from "next/image"
 import React from "react"
 
@@ -7,10 +8,17 @@ const StoreFeatures = () => {
     <div className="flex flex-col md:flex-row items-center justify-between w-full gap-4 md:gap-2 mt-6 sm:mt-7 md:mt-8">
       {/* Left side text box - full width on mobile, 50% on desktop */}
       <aside className="w-full md:w-[50%] h-auto md:h-[400px] lg:h-[500px] xl:h-[600px]">
-        <div className="w-full h-full flex flex-col justify-center items-center bg-transparent border-primary border-2 rounded-lg sm:rounded-xl md:rounded-2xl text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal font-gardein text-primary py-6 sm:py-7 md:py-8 px-0 text-center">
-          <p>Milleyun is a premium drink</p>
-          <p>company in providing high quality</p>
-          <p>millet drinks</p>
+        <div className="w-full h-full flex flex-col justify-center items-center bg-transparent border-primary border-2 rounded-lg sm:rounded-xl md:rounded-2xl text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal font-gardein text-primary py-6 sm:py-7 md:py-8 px-4 text-center gap-6">
+          <div>
+            <p>Milleyun is a premium drink</p>
+            <p>company in providing high quality</p>
+            <p>millet drinks</p>
+          </div>
+          <div className="w-full max-w-xs">
+            <PrimaryButton>
+              Learn More
+            </PrimaryButton>
+          </div>
         </div>
       </aside>
       

@@ -49,10 +49,6 @@ export const listProducts = async ({
     ...(await getAuthHeaders()),
   }
 
-  const next = {
-    ...(await getCacheOptions("products")),
-  }
-
   return sdk.client
     .fetch<{ products: HttpTypes.StoreProduct[]; count: number }>(
       `/store/products`,
@@ -70,10 +66,10 @@ export const listProducts = async ({
           ...headers
         },
         next: {
-          revalidate: 0,
-          tags: [`products-${Date.now()}`] // Dynamic tag to prevent caching
+          revalidate: 3600,
+          tags: ['products']
         },
-        cache: 'no-store'
+        cache: 'force-cache'
       }
     )
     .then(({ products, count }) => {

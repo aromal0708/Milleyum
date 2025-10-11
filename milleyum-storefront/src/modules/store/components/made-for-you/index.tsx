@@ -1,5 +1,6 @@
 import { SimplifiedProducts } from "types/global"
 import Product from "../product"
+import PrimaryButton from "@modules/common/components/primary-button"
 
 const MadeForYou = ({ products }: { products: SimplifiedProducts[] }) => {
   return (
@@ -24,9 +25,9 @@ const MadeForYou = ({ products }: { products: SimplifiedProducts[] }) => {
           <div className="w-full">
             {products?.[0] && <Product product={products[0]} />}
           </div>
-          <button className="bg-transparent text-primary border-primary border-2 py-3 rounded-full w-full font-gardein text-xl md:text-2xl font-semibold hover:bg-primary hover:text-white transition-colors">
+          <PrimaryButton>
             Shop Now
-          </button>
+          </PrimaryButton>
         </div>
       </div>
 
