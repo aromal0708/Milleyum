@@ -28,32 +28,20 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
 
   return (
     <>
-      <div
-        className="content-container flex flex-col small:flex-row small:items-start py-6 relative"
+      <section
+        className="mx-auto flex max-w-[1440px] flex-col items-start justify-start gap-4 lg:flex-row lg:gap-2 lg:px-12 lg:py-6"
         data-testid="product-container"
       >
-        <div className="block w-full relative">
+        <div className="mx-auto flex w-full gap-2 lg:sticky lg:top-[calc(var(--header-height)+24px)] lg:mx-0 lg:max-w-[684px]">
           <ImageGallery images={product?.images || []} />
         </div>
-        <div className="flex flex-col small:sticky small:top-48 small:py-0 small:max-w-[300px] w-full py-8 gap-y-6">
+
+        <div className="flex w-full flex-col gap-8 px-4 pb-24 pt-4 lg:max-w-[580px] lg:gap-4 lg:py-4">
           <ProductInfo product={product} />
           <ProductTabs product={product} />
         </div>
-        <div className="flex flex-col small:sticky small:top-48 small:py-0 small:max-w-[300px] w-full py-8 gap-y-12">
-          <ProductOnboardingCta />
-          <Suspense
-            fallback={
-              <ProductActions
-                disabled={true}
-                product={product}
-                region={region}
-              />
-            }
-          >
-            <ProductActionsWrapper id={product.id} region={region} />
-          </Suspense>
-        </div>
-      </div>
+      </section>
+
       <div
         className="content-container my-16 small:my-32"
         data-testid="related-products-container"

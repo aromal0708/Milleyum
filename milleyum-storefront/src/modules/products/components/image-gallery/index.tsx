@@ -13,61 +13,48 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0)
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
-      <div className="flex gap-4 lg:gap-6">
-        {/* Thumbnails */}
-        <div className="flex flex-col gap-2 lg:gap-3">
+    <div className="mx-auto flex w-full gap-2 lg:sticky lg:top-[calc(var(--header-height)+24px)] lg:mx-0 lg:max-w-[684px]">
+      <div className="hidden w-[85px] flex-col gap-2 lg:flex">
+        {images.map((image, index) => (
+          <button
+            key={image.id}
+            onClick={() => setSelectedImageIndex(index)}
+            className="w-[85px] overflow-hidden rounded-lg"
+          >
+            <Image
+              src={image.url}
+              alt={`carousel-item-${index}`}
+              width={85}
+              height={85}
+              className="aspect-square h-[85px] w-[85px] object-cover object-center"
+              sizes="85px"
+            />
+          </button>
+        ))}
+      </div>
+      
+      <div className="overflow-hidden scrollbar-hide  h-fit w-full gap-xs px-m lg:px-0">
+        <div 
+          className="flex snap-x snap-mandatory gap-xs transition-transform duration-500 ease-in-out"
+          style={{
+            transform: `translate3d(-${selectedImageIndex * 100}%, 0px, 0px)`,
+            willChange: 'transform'
+          }}
+        >
           {images.map((image, index) => (
-            <button
-              key={image.id}
-              onClick={() => setSelectedImageIndex(index)}
-              aria-label={`View image ${index + 1}`}
-              className={`w-16 h-16 lg:w-20 lg:h-20 relative rounded-lg overflow-hidden transition-all duration-300 ease-out ${
-                selectedImageIndex === index
-                  ? "ring-2 ring-primary ring-offset-2 shadow-lg transform scale-105"
-                  : "ring-1 ring-gray-200 hover:ring-gray-300 hover:shadow-md hover:transform hover:scale-102"
-              }`}
-            >
+            <div key={image.id} className="flex-1 relative flex w-[86vw] min-w-full snap-center justify-center lg:w-full">
               <Image
                 src={image.url}
-                alt={`Product thumbnail ${index + 1}`}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 64px, 80px"
+                alt="Dark Chocolate Peanut Butter Chip"
+                width={591}
+                height={591}
+                priority={index === 0}
+                loading={index === 0 ? undefined : "lazy"}
+                className="aspect-thin aspect-square w-full rounded-2xl object-cover object-bottom"
+                sizes="(min-width: 1360px) 600px, (min-width: 1040px) calc(92vw - 633px), 100vw"
               />
-            </button>
-          ))}
-        </div>
-
-        {/* Main Image Container */}
-        <div className="flex-1 relative">
-          <div className="relative w-full h-[400px] lg:h-[480px] rounded-xl overflow-hidden bg-gray-50">
-            <div
-              className="flex h-full transition-transform duration-500 ease-in-out"
-              style={{
-                transform: `translateX(-${selectedImageIndex * 100}%)`,
-                width: `${images.length * 100}%`,
-              }}
-            >
-              {images.map((image, index) => (
-                <div
-                  key={image.id}
-                  className="w-full h-full flex-shrink-0 relative flex items-center justify-center p-4"
-                >
-                  <div className="relative w-full h-full">
-                    <Image
-                      src={image.url}
-                      alt={`Product Image ${index + 1}`}
-                      fill
-                      className="object-contain"
-                      priority={index === 0}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                  </div>
-                </div>
-              ))}
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
