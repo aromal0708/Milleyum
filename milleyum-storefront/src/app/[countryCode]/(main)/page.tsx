@@ -61,8 +61,8 @@ export default async function StorePage(props: Params) {
   }
 
   return (
-    <div className="w-full">
-      <div className="flex flex-col items-center justify-center w-full px-4 sm:px-6 md:px-8 lg:px-14">
+    <div className="w-full max-w-full overflow-x-hidden">
+      <div className="flex flex-col items-center justify-center w-full max-w-full px-4 sm:px-6 md:px-8 lg:px-14">
         <StoreHero />
         <BuyProducts products={simplifiedProducts} />
         <MadeForYou products={simplifiedProducts} />

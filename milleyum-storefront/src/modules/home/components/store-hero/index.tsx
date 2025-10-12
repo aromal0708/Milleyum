@@ -2,14 +2,14 @@ import React from "react"
 
 const StoreHero = () => {
   return (
-    <div>
+    <div className="w-full max-w-full overflow-hidden">
       <div
-        className="relative mx-[calc(-1*((100vw-100%)/2))] px-14 bg-cover bg-center h-[50vh] sm:h-[60vh] md:h-[70vh] flex flex-col items-start"
+        className="relative w-full bg-cover bg-center h-[50vh] sm:h-[60vh] md:h-[70vh] flex flex-col items-start"
         style={{
           backgroundImage: "url('/assets/hero_bg.jpg')",
         }}
       >
-        <div className="flex flex-col items-start justify-center h-full bg-opacity-50 px-4 ">
+        <div className="flex flex-col items-start justify-center h-full bg-opacity-50 px-4 sm:px-6 md:px-8 lg:px-14">
           <div className="text-xl sm:text-xl md:text-xl lg:text-7xl text-white font-medium font-gardein">
             <h1>No Nasties</h1>
             <h1>No Nonsense</h1>

@@ -4,7 +4,7 @@ import PrimaryButton from "@modules/common/components/primary-button"
 
 const MadeForYou = ({ products }: { products: SimplifiedProducts[] }) => {
   return (
-    <div className="flex flex-col items-start w-full justify-center text-base sm:text-md md:text-lg font-medium font-degular text-primary py-4 sm:py-6 md:py-8">
+    <div className="flex flex-col items-start w-full max-w-full justify-center text-base sm:text-md md:text-lg font-medium font-degular text-primary py-4 sm:py-6 md:py-8 overflow-x-hidden">
       <div
         className="mt-4 relative min-h-[500px] w-full rounded-xl overflow-hidden"
         style={{
@@ -37,11 +37,8 @@ const MadeForYou = ({ products }: { products: SimplifiedProducts[] }) => {
         <p>millet drinks</p>
       </div> */}
 
-      <div className="overflow-hidden w-full my-6 sm:my-8 md:my-10">
-        <div
-          className="flex whitespace-nowrap animate-scroll"
-          style={{ width: "max-content" }}
-        >
+      <div className="w-full max-w-full overflow-hidden my-6 sm:my-8 md:my-10">
+        <div className="flex whitespace-nowrap animate-scroll">
           <div className="flex flex-row gap-0 text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-gardein font-normal text-primary whitespace-nowrap">
             <span className="px-4 sm:px-6 md:px-8">No Added Sugar</span>
             <span className="px-4 sm:px-6 md:px-8">Probiotic</span>

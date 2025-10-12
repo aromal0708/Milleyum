@@ -21,14 +21,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-mode="light">
+    <html lang="en" data-mode="light" className="overflow-x-hidden">
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/hnw8aos.css" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#772A49" />
       </head>
-      <body>
-        <main className="relative">{props.children}</main>
+      <body className="overflow-x-hidden max-w-full">
+        <main className="relative overflow-x-hidden max-w-full">{props.children}</main>
       </body>
     </html>
   )
