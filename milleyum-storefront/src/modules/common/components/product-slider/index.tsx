@@ -92,7 +92,8 @@ const ProductSlider = ({
           <div 
             className="flex gap-2 sm:gap-3 md:gap-4 transition-transform duration-500 ease-in-out"
             style={{
-              transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`
+              transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
+              paddingRight: '1rem'
             }}
           >
             {products.map((product) => (
